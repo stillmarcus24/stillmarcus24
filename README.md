@@ -1,20 +1,31 @@
-## Marcus Still — Still OS Digital Holdings LLC
+## Marcus Still
 
-Independent security research and trust infrastructure for the autonomous agent economy.
+Security engineer and researcher. I find and responsibly disclose
+vulnerabilities, and I build the tooling that finds them at scale.
 
-**Security research (public, third-party-verified):**
-- **CVE-2026-106763** — RCE in `@justice8096/sagemath-mcp-server`
-- **CVE-2026-106764** — RCE in `@rog0x/mcp-git-tools`
-- **CVE-2026-106765** — RCE in `@rog0x/mcp-docker-tools`
+### What I am known for
+- Coordinated-disclosure of multiple CWE-22 arbitrary-file-write
+  vulnerabilities across the Model Context Protocol (MCP) server ecosystem,
+  each source-confirmed and CodeQL-corroborated.
+- The MCP CodeQL query pack - the taint queries GitHub's own CodeQL does
+  not ship. Stock CodeQL models Express and Axios but not MCP, so it reports
+  zero on a genuinely vulnerable MCP server; my source model fixes that and
+  finds the real flows.
+- A reusable GitHub Action that runs that scan in any MCP repo's CI.
+- Contributions to the GitHub Advisory Database (including a mapping for a
+  package at 25M+ weekly downloads) and a security-guidance issue on the
+  official MCP TypeScript SDK.
 
-All three are command-injection → remote code execution in published MCP (Model Context Protocol) servers, reported through MITRE and credited to Still OS Digital Holdings LLC.
+### The work
+[mcp-security-research](https://github.com/stillmarcus24/mcp-security-research)
+- method, the CodeQL pack, the GitHub Action, an ecosystem security
+  scorecard built from a 65,000-server census, and a named vulnerability
+  class. Findings under coordinated disclosure; no unfixed package named.
 
-**Standards work:**
-- Authoring the **correctness & dispute extension** for the x402 payment standard ([x402-foundation/x402#3868](https://github.com/x402-foundation/x402/pull/3868)) — the layer that adjudicates whether what was paid for was *correct*, backed by an on-chain bond.
+### How I work
+Measure before asserting. Source-confirm every finding against the
+published artifact, not the analyzer output. Prove it, then ship it.
+Responsible disclosure first - private report, coordinated window, public
+advisory only after a fix.
 
-**What I build:** a correctness/dispute & trust layer for machine-to-machine commerce — signed, hash-chained verdicts; an on-chain, independently-checkable correctness bond; and zero-dependency conformance kits so anyone can verify the work without trusting me.
-
-- Reference kit: [notary-x402-reference-kit](https://github.com/stillmarcus24/notary-x402-reference-kit)
-- Independent verifiers: [stillos-kyaos-verifier](https://github.com/stillmarcus24/stillos-kyaos-verifier) · [stillos-ai-provenance](https://github.com/stillmarcus24/stillos-ai-provenance)
-
-Everything I publish is designed to be recomputed by a stranger. Verify, don't trust.
+Reach me: stillmarcus24@gmail.com
